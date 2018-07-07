@@ -31,6 +31,7 @@ export function todosReducer(state: TodosState = initialState, action: TodosActi
     case TodosActionTypes.DeleteTodo: {
       const { todos } = state;
       const newTodos = todos.filter(todo => todo.id !== action.payload.id);
+      // Alternative: todos.splice(action.payload , 1)
       return {
         ...state,
         todos: [
