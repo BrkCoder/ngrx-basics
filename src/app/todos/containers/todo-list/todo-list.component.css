@@ -1,0 +1,21 @@
+.todos-control-panel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.padding-left-right{
+    padding: 0 1em;
+}
+
+.margin-left-right{
+    margin: 0 1em;
+}
+
+.margin-up-down{
+    margin: 1em 0;
+}
+
+.todo-completed{
+    text-decoration: line-through;
+}

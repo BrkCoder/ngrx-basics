@@ -1,0 +1,29 @@
+<div class="todos-control-panel">
+  <mat-form-field>
+    <input matInput type="text" name="new-todo" placeholder="Add a todo" [(ngModel)]="newTodo">
+  </mat-form-field>
+  <button class="margin-left-right" mat-raised-button color="primary" (click)="onAddTodo(newTodo);">Add Todo</button>
+</div>
+<mat-list class="todos-list">
+  <mat-list-item *ngFor="let todo of (todos$ | async)" class="todo-element" [ngClass]="{'margin-up-down':todo?.isEditabled}">
+    <mat-icon mat-list-icon>turned_in</mat-icon>
+    <span class="margin-left-right" [ngClass]="{'todo-completed': todo?.isCompleted}" *ngIf="!todo?.isEditabled">
+      {{ todo?.text }}
+    </span>
+    <mat-form-field class="padding-left-right" *ngIf="todo?.isEditabled">
+      <input matInput placeholder="Enter Todo" [(ngModel)]="todo.text">
+    </mat-form-field>
+    <button mat-icon-button (click)="onCompleteTodo(todo);" *ngIf="!todo?.isEditabled">
+      <mat-icon mat-list-icon *ngIf="!todo?.isCompleted">check_circle</mat-icon>
+      <mat-icon mat-list-icon *ngIf="todo?.isCompleted">autorenew</mat-icon>
+    </button>
+    <button mat-icon-button (click)="!todo?.isEditabled? onEditTodo(todo) : onUpdateTodo(todo) " [disabled]="todo?.isCompleted">
+      <mat-icon mat-list-icon *ngIf="!todo?.isEditabled">create</mat-icon>
+      <mat-icon mat-list-icon *ngIf="todo?.isEditabled">done</mat-icon>
+    </button>
+    <button mat-icon-button (click)="onRemoveTodo(todo);">
+      <mat-icon mat-list-icon>clear</mat-icon>
+    </button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

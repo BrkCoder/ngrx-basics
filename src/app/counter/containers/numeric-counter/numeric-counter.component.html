@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="buttons-panel">
+    <button mat-raised-button color="primary" (click)="increment()">+</button>
+    <button mat-raised-button color="primary" (click)="decrement()">-</button>
+    <button mat-raised-button color="primary" (click)="incrementAsync()">Increment Async</button>
+    <button mat-raised-button color="primary" (click)="decrementAsync()">Decrement Async</button>
+  </div>
+  <div class="flex center">
+    <h3>{{(counter$ | async)}}</h3>
+  </div>
+</div>
