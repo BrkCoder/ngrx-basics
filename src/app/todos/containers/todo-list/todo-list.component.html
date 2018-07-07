@@ -5,13 +5,13 @@
   <button class="margin-left-right" mat-raised-button color="primary" (click)="onAddTodo(newTodo);">Add Todo</button>
 </div>
 <mat-list class="todos-list">
-  <mat-list-item *ngFor="let todo of (todos$ | async)" class="todo-element" [ngClass]="{'margin-up-down':todo?.isEditabled}">
+  <mat-list-item *ngFor="let todo of todos$ | async" class="todo-element" [ngClass]="{'margin-up-down':todo?.isEditabled}">
     <mat-icon mat-list-icon>turned_in</mat-icon>
     <span class="margin-left-right" [ngClass]="{'todo-completed': todo?.isCompleted}" *ngIf="!todo?.isEditabled">
       {{ todo?.text }}
     </span>
     <mat-form-field class="padding-left-right" *ngIf="todo?.isEditabled">
-      <input matInput placeholder="Enter Todo" [(ngModel)]="todo.text">
+      <input matInput placeholder="Enter Todo" type="text" [name]="todo.id" [(ngModel)]="todo.text">
     </mat-form-field>
     <button mat-icon-button (click)="onCompleteTodo(todo);" *ngIf="!todo?.isEditabled">
       <mat-icon mat-list-icon *ngIf="!todo?.isCompleted">check_circle</mat-icon>

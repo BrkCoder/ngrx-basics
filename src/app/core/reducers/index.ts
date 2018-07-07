@@ -5,6 +5,7 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from '../../../environments/environment';
 import { TodosState, todosReducer } from '../../todos/reducers/todos.reducer';
 import { CounterState, counterReducer } from '../../counter/reducers/counter.reducer';
@@ -20,4 +21,4 @@ export const reducers: ActionReducerMap<AppState> = {
 };
 
 
-export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [storeFreeze] : [];

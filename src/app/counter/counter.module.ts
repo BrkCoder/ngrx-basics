@@ -9,7 +9,7 @@ import { counterReducer } from './reducers/counter.reducer';
   imports: [
     CommonModule,
     MatButtonModule,
-    StoreModule.forFeature('counterState', counterReducer)
+    // StoreModule.forFeature('counterState', counterReducer)
   ],
   declarations: [NumericCounterComponent],
   exports: [NumericCounterComponent]

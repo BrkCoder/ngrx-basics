@@ -17,7 +17,7 @@ import { todosReducer } from './reducers/todos.reducer';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    StoreModule.forFeature('todosState', todosReducer)
+    // StoreModule.forFeature('todosState', todosReducer)
   ],
   declarations: [TodoListComponent],
   exports: [TodoListComponent]

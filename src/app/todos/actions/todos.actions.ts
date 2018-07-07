@@ -9,7 +9,6 @@ export enum TodosActionTypes {
   EditTodo = '[Todos] EditTodo'
 }
 
-export const UPDATE_TODO = '[todo] UPDATE_TODO';
 
 export class AddTodo implements Action {
   readonly type = TodosActionTypes.AddTodo;

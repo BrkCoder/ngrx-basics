@@ -10,6 +10,7 @@ import { TodolistModule } from './todos/todos.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { metaReducers, reducers } from './core/reducers';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     CounterModule,
     TodolistModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
