@@ -9,7 +9,7 @@ export const initialState: TodosState = {
   todos: []
 };
 
-export function todosReducer(state = initialState, action: TodosActions): TodosState {
+export function todosReducer(state: TodosState = initialState, action: TodosActions): TodosState {
   switch (action.type) {
     case TodosActionTypes.AddTodo: {
       const { todos } = state;

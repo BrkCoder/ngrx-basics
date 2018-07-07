@@ -10,8 +10,8 @@ import { TodosState, todosReducer } from '../../todos/reducers/todos.reducer';
 import { CounterState, counterReducer } from '../../counter/reducers/counter.reducer';
 
 export interface AppState {
-  todosState: TodosState;
-  counterState: CounterState;
+  readonly todosState: TodosState;
+  readonly counterState: CounterState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
